@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BlackJackGame": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

@@ -1,0 +1,107 @@
+﻿<Window x:Class="BlackJackGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackJackGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="800">
+    <Grid Height="800" Background="#FF1C7C54" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="169*"/>
+        </Grid.ColumnDefinitions>
+        <Border BorderThickness="2" BorderBrush="White" Margin="46,62,46,452" Grid.ColumnSpan="2"/>
+        <Border BorderThickness="2" BorderBrush="White" Margin="46,395,46,120" Grid.ColumnSpan="2">
+            <Label Content="Jugador" HorizontalAlignment="Center" VerticalAlignment="Top" Cursor="Hand" Foreground="White" FontSize="24" Margin="0,-2,0,0"/>
+        </Border>
+        <Label Content="Tallador" Grid.Column="1" HorizontalAlignment="Left" Margin="230,62,0,0" VerticalAlignment="Top" Cursor="Hand" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnJugar" Content="Jugar" Margin="46,706,570,52" Grid.ColumnSpan="2" Background="#FFD1FAFF" RenderTransformOrigin="0.5,0.5" FontSize="14" Click="btnJugar_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnSolicitarCarta" Content="Solicitar carta" Margin="183,706,307,52" Background="#FFD1FAFF" RenderTransformOrigin="0.5,0.5" FontSize="14" Grid.Column="1" IsCancel="True" Click="btnPedir_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnPlantarse" Content="Plantarse" Margin="444,706,46,52" Background="#FFD1FAFF" RenderTransformOrigin="0.5,0.5" FontSize="14" Grid.Column="1" Click="btnPlantarse_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Image x:Name="CardPlayer1" Grid.ColumnSpan="2" Margin="114,471,592,185" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94"/>
+        <Image x:Name="CardDealer1" Grid.ColumnSpan="2" Margin="91,133,615,523" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94"/>
+        <Image x:Name="CardDealer2" Margin="106,133,476,523" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Image x:Name="CardDealer3" Margin="244,133,338,523" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Image x:Name="CardDealer4" Margin="387,133,195,523" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Label x:Name="lblScore1" Content="" Margin="46,575,592,191" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbol1" Content="" Margin="122,472,606,0" Grid.ColumnSpan="2" VerticalAlignment="Top" Width="72" FontWeight="Bold"/>
+        <Label x:Name="lblSuit1" Content="" Margin="23,528,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Height="84" HorizontalAlignment="Left"/>
+        <Image x:Name="CardPlayer2" Margin="106,471,476,185" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Image x:Name="CardPlayer3" Margin="224,470,358,186" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Image x:Name="CardPlayer4" Margin="350,471,232,185" Source="/fondo-vacío-del-papel-del-naipe-con-la-línea-aislada-en-blanco-35082364.jpg" Height="144" Width="94" Grid.Column="1"/>
+        <Label Content="" Margin="358,509,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label x:Name="lblColor1" Content="" Margin="17,549,616,217" Grid.Column="1" FontWeight="Bold" Visibility="Visible"/>
+        <Label x:Name="lblScore2" Content="" Margin="153,574,485,192" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbol2" Content="" Margin="110,471,494,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuit2" Content="" Margin="129,527,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Height="84" HorizontalAlignment="Left"/>
+        <Label x:Name="lblColor2" Content="" Margin="122,545,511,221" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblScore3" Content="" Margin="278,572,360,194" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbol3" Content="" Margin="230,469,374,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuit3" Content="" Margin="254,525,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Height="84" HorizontalAlignment="Left"/>
+        <Label x:Name="lblColor3" Content="" Margin="247,543,386,223" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblScore4" Content="" Margin="406,575,232,191" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbol4" Content="" Margin="358,472,246,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuit4" Content="" Margin="382,528,0,0" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1" Height="84" HorizontalAlignment="Left"/>
+        <Label x:Name="lblColor4" Content="" Margin="376,546,258,220" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblScoreDealer1" Content="" Margin="22,242,616,524" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbolDealer1" Content="" Margin="98,139,630,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSuitDealer1" Content="" Margin="122,195,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="84" HorizontalAlignment="Left" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblColorDealer1" Content="" Margin="116,216,640,550" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblScoreDealer2" Content="" Margin="159,246,479,520" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbolDealer2" Content="" Margin="111,143,493,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuitDealer2" Content="" Margin="135,199,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="84" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label x:Name="lblColorDealer2" Content="" Margin="129,220,503,546" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblScoreDealer3" Content="" Margin="299,242,339,524" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbolDealer3" Content="" Margin="251,139,353,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuitDealer3" Content="" Margin="275,195,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="84" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label x:Name="lblColorDealer3" Content="" Margin="269,216,363,550" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblScoreDealer4" Content="" Margin="442,241,196,525" Grid.Column="1" FontWeight="Bold"/>
+        <Label x:Name="lblSymbolDealer4" Content="" Margin="394,138,210,0" VerticalAlignment="Top" Width="72" FontWeight="Bold" Grid.Column="1"/>
+        <Label x:Name="lblSuitDealer4" Content="" Margin="418,194,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="84" HorizontalAlignment="Left" Grid.Column="1"/>
+        <Label x:Name="lblColorDealer4" Content="" Margin="412,215,220,551" FontWeight="Bold" Grid.Column="1"/>
+        <Label Content="Puntaje:" Margin="57,644,0,122" FontWeight="Bold" FontSize="13" Foreground="White"/>
+        <Label x:Name="lblPuntajeJugador" Content="0" Margin="114,645,619,121" FontWeight="Bold" FontSize="13" Foreground="White" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnJugarNuevaPartida" Content="Volver a Jugar" Margin="46,706,570,52" Grid.ColumnSpan="2" Background="#FFD1FAFF" RenderTransformOrigin="0.5,0.5" FontSize="14" Click="btnJugarNuevaPartida_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label Content="Ganadas:" Margin="82,643,523,123" FontWeight="Bold" FontSize="13" Foreground="White" Grid.Column="1"/>
+        <Label x:Name="lblGanadas" Content="0" Margin="148,644,460,122" FontWeight="Bold" FontSize="13" Foreground="White" Grid.Column="1"/>
+        <Label Content="Perdidas" Margin="300,640,305,126" FontWeight="Bold" FontSize="13" Foreground="White" Grid.Column="1"/>
+        <Label x:Name="lblPerdidas" Content="0" Margin="366,641,242,125" FontWeight="Bold" FontSize="13" Foreground="White" Grid.Column="1"/>
+    </Grid>
+</Window>
